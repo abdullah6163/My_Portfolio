@@ -89,12 +89,12 @@ export default function Home() {
 <section
   id="home"
   className="
-    relative
+       relative
     flex
     min-h-screen
     items-center
     px-6
-    py-24
+    py-20
     md:px-12
     lg:px-32
     
@@ -104,7 +104,7 @@ export default function Home() {
         <div className="absolute left-20 top-32 h-72 w-72 rounded-full bg-cyan-500/10 blur-[140px]" />
         <div className="absolute right-20 bottom-20 h-72 w-72 rounded-full bg-violet-500/10 blur-[140px]" />
 
-        <div className="relative z-10 grid w-full grid-cols-1 items-center gap-16 lg:grid-cols-2">
+        <div className="relative z-10 grid w-full grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
 
           {/* LEFT SIDE */}
           <motion.div
@@ -116,7 +116,7 @@ export default function Home() {
               Welcome to my portfolio
             </p>
 
-            <h1 className="text-5xl font-black leading-none md:text-5xl">
+           <h1 className="text-4xl font-black leading-none sm:text-5xl lg:text-6xl">
               MD. FAHIM
               <br />
               ABDULLAH
@@ -127,7 +127,7 @@ export default function Home() {
                 Computer Science & Engineering Graduate
               </p>
 
-              <div className="min-h-[90px] text-2xl font-bold md:text-3xl">
+             <div className="min-h-[70px] text-xl font-bold sm:text-2xl lg:text-3xl">
                 <span
                   className="
                     inline-block
@@ -156,14 +156,14 @@ export default function Home() {
               </div>
             </div>
 
-            <p className="mt-8 max-w-xl text-lg leading-relaxed text-slate-400">
+            <p className="mt-6 max-w-full text-base leading-relaxed text-slate-400 sm:text-lg lg:max-w-xl">
               Passionate about Android development,
               machine learning, and software engineering.
               I enjoy transforming ideas into practical,
               user-focused solutions that create real impact.
             </p>
 
-            <div className="mt-10 flex flex-wrap gap-4">
+           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <button
                 className="
                   rounded-xl
@@ -241,7 +241,7 @@ export default function Home() {
   }}
   className="
     absolute
-    -inset-4
+    -inset-2 lg:-inset-4
     rounded-full
     border
     border-cyan-400/30
@@ -258,7 +258,7 @@ export default function Home() {
   }}
   className="
     absolute
-    -inset-8
+    -inset-4 lg:-inset-8
     rounded-full
     border
     border-violet-400/20
@@ -292,18 +292,22 @@ export default function Home() {
 
               {/* Profile Image */}
               <div
-                className="
-                  relative
-                  h-[340px]
-                  w-[340px]
-                  overflow-hidden
-                  rounded-full
-                  border-4
-                  border-slate-800
-                  bg-slate-900
-                  shadow-[0_0_60px_rgba(56,189,248,0.2)]
-                "
-              >
+  className="
+    relative
+    h-[240px]
+    w-[240px]
+    overflow-hidden
+    rounded-full
+    border-4
+    border-slate-800
+    bg-slate-900
+    shadow-[0_0_60px_rgba(56,189,248,0.2)]
+    sm:h-[300px]
+    sm:w-[300px]
+    lg:h-[340px]
+    lg:w-[340px]
+  "
+>
                 <img
                   src="/profile.png"
                   alt="Md. Fahim Abdullah"
