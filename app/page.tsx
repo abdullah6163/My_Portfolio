@@ -89,13 +89,12 @@ export default function Home() {
 <section
   id="home"
   className="
-      relative
+ relative
     flex
-    min-h-screen
     items-start
-    lg:items-center
     px-6
-    py-20
+    pt-24
+    pb-10
     md:px-12
     lg:px-32
     
