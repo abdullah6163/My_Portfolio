@@ -27,19 +27,56 @@ import {
   SiOpencv,
   SiMysql,
   SiAndroidstudio,
-  SiXampp,
+  SiXampp, 
+  SiFastapi,
+  SiC,
+  SiCplusplus,
 } from "react-icons/si";
 
 import { TbBrandCpp, TbLetterC } from "react-icons/tb";
 import { VscCode } from "react-icons/vsc";
 import { SiXml } from "react-icons/si";
 import { SiScikitlearn } from "react-icons/si";
-
+import { TbFileTypeXml } from "react-icons/tb";
+import { MdDesignServices } from "react-icons/md";
+import { FaCode } from "react-icons/fa";
 
 
 import Navbar from "../components/Navbar";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
+
+
+const TechItem = ({ icon, title }: any) => (
+  <div
+    className="
+      flex items-center gap-4
+      rounded-2xl
+      bg-white/[0.05]
+      hover:bg-white/[0.08]
+      border border-white/5
+      hover:border-cyan-400/20
+      p-4
+      transition-all duration-300
+    "
+  >
+    <div
+      className="
+        w-12 h-12
+        rounded-xl
+        bg-white/10
+        flex items-center justify-center
+        text-2xl
+      "
+    >
+      {icon}
+    </div>
+
+    <span className="font-semibold text-gray-200">
+      {title}
+    </span>
+  </div>
+);
 
 
 
@@ -49,17 +86,18 @@ export default function Home() {
     <main className="overflow-hidden bg-[#050816] text-white">
       <Navbar />
 
-      <section
-         id="home"
+<section
+  id="home"
   className="
     relative
     flex
     min-h-screen
     items-center
-    px-16
-    pt-24
+    px-6
+    py-24
+    md:px-12
     lg:px-32
-    lg:pt-16
+    
   "
       >
         {/* Background Glow */}
@@ -286,380 +324,137 @@ export default function Home() {
         </div>
       </section>
 
-
 <section
   id="about"
-  className="px-16 py-24 lg:px-32"
+  className="px-6
+    py-20
+    md:px-12
+    lg:px-32"
 >
-  <div className="w-full">
+  <div className="max-w-7xl mx-auto">
 
-    {/* SECTION TITLE */}
+    {/* Heading */}
     <p className="mb-4 uppercase tracking-[0.25em] text-cyan-400">
       About Me
     </p>
 
-    <h2 className="mb-16 text-4xl font-bold md:text-5xl">
+    <h2 className="mb-12 text-3xl font-bold md:text-4xl lg:text-5xl">
       Who Am I?
     </h2>
 
-    {/* TOP PART */}
-    <div className="grid gap-12 lg:grid-cols-2">
+    <div className="grid gap-10 lg:grid-cols-2">
 
-      {/* LEFT */}
+      {/* Left Side */}
       <motion.div
         initial={{ opacity: 0, x: -30 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
       >
-        <p className="text-lg leading-9 text-slate-400">
-          I am a Computer Science & Engineering graduate with a strong
-          passion for software development, Android applications,
-          artificial intelligence, and machine learning.
-          I enjoy building technology that is practical,
-          impactful, and capable of solving real-world problems.
+        <p className="text-lg leading-8 text-slate-400">
+          Computer Science & Engineering graduate passionate about
+          Android development, Artificial Intelligence and Machine
+          Learning. I enjoy building practical software solutions
+          that solve real-world problems and create meaningful impact.
         </p>
 
-        <p className="mt-6 text-lg leading-9 text-slate-400">
-          Throughout my academic journey, I have worked on projects
-          involving Android development, machine learning,
-          deep learning, and database-driven applications.
-          These experiences have strengthened both my technical
-          foundation and my ability to transform ideas into
-          working solutions.
+        <p className="mt-6 text-lg leading-8 text-slate-400">
+          My interests include mobile application development,
+          deep learning, computer vision, research, and software
+          engineering.
         </p>
 
-        <p className="mt-6 text-lg leading-9 text-slate-400">
-          Beyond development, I enjoy problem solving,
-          research, continuous learning, and exploring emerging
-          technologies. I strive to create software that combines
-          functionality, efficiency, and a great user experience.
-        </p>
+        {/* Quick Info */}
+        <div className="mt-8 grid grid-cols-2 gap-4">
+
+          <div className="rounded-2xl bg-white/5 p-5 border border-white/10">
+            <h3 className="text-3xl font-bold text-cyan-400">
+              250+
+            </h3>
+            <p className="mt-1 text-slate-400">
+              Problems Solved
+            </p>
+          </div>
+
+          <div className="rounded-2xl bg-white/5 p-5 border border-white/10">
+            <h3 className="text-3xl font-bold text-violet-400">
+              10+
+            </h3>
+            <p className="mt-1 text-slate-400">
+              Projects Completed
+            </p>
+          </div>
+
+          <div className="rounded-2xl bg-white/5 p-5 border border-white/10">
+            <h3 className="text-3xl font-bold text-green-400">
+              AI and ML
+            </h3>
+            <p className="mt-1 text-slate-400">
+              Research Interest
+            </p>
+          </div>
+
+          <div className="rounded-2xl bg-white/5 p-5 border border-white/10">
+  <h3 className="text-3xl font-bold text-orange-400">
+    6+
+  </h3>
+  <p className="mt-1 text-slate-400">
+    Certifications
+  </p>
+</div>
+
+          
+
+        </div>
       </motion.div>
 
-      {/* RIGHT */}
-      <div className="space-y-6">
+      {/* Right Side */}
+      <motion.div
+        initial={{ opacity: 0, x: 30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
+        className="
+          rounded-3xl
+          border
+          border-cyan-500/20
+          bg-white/[0.03]
+          p-8
+          backdrop-blur-sm
+        "
+      >
+        <h3 className="mb-6 text-2xl font-bold">
+          Core Expertise
+        </h3>
 
-        {/* Android */}
-        <motion.div
-          whileHover={{ y: -5 }}
-          className="
-            rounded-2xl
-            border
-            border-green-500/20
-            bg-white/5
-            p-6
-            backdrop-blur-xl
-            transition-all
-          "
-        >
-          <h3 className="mb-2 text-xl font-bold text-green-400">
-            📱 Android Development
-          </h3>
+        <div className="flex flex-wrap gap-3">
 
-          <p className="text-slate-400">
-            Developing Android applications using Java,
-            Firebase, SQL, and modern mobile development
-            practices.
+          <span className="skill-pill">Android Development</span>
+          <span className="skill-pill">Java</span>
+          <span className="skill-pill">Firebase</span>
+          <span className="skill-pill">Machine Learning</span>
+          <span className="skill-pill">Deep Learning</span>
+          <span className="skill-pill">TensorFlow</span>
+          <span className="skill-pill">FastAPI</span>
+          <span className="skill-pill">Computer Vision</span>
+          <span className="skill-pill">Python</span>
+          <span className="skill-pill">SQL</span>
+          <span className="skill-pill">Git</span>
+          <span className="skill-pill">Research</span>
+
+        </div>
+
+        <div className="mt-8 rounded-2xl bg-cyan-500/5 p-6 border border-cyan-500/10">
+          <p className="text-slate-300 leading-8">
+            Currently focused on Android applications,
+            AI-powered systems, machine learning research,
+            and intelligent solutions for real-world problems.
           </p>
-        </motion.div>
+        </div>
 
-        {/* AI */}
-        <motion.div
-          whileHover={{ y: -5 }}
-          className="
-            rounded-2xl
-            border
-            border-violet-500/20
-            bg-white/5
-            p-6
-            backdrop-blur-xl
-            transition-all
-          "
-        >
-          <h3 className="mb-2 text-xl font-bold text-violet-400">
-            🤖 AI & Machine Learning
-          </h3>
+      </motion.div>
 
-          <p className="text-slate-400">
-            Exploring machine learning and deep learning
-            through research, experimentation, and
-            intelligent software solutions.
-          </p>
-        </motion.div>
-
-        {/* Problem Solving */}
-        <motion.div
-          whileHover={{ y: -5 }}
-          className="
-            rounded-2xl
-            border
-            border-cyan-500/20
-            bg-white/5
-            p-6
-            backdrop-blur-xl
-            transition-all
-          "
-        >
-          <h3 className="mb-2 text-xl font-bold text-cyan-400">
-            💡 Problem Solving
-          </h3>
-
-          <p className="text-slate-400">
-            Applying analytical thinking, algorithms,
-            and software engineering principles to
-            solve practical challenges.
-          </p>
-        </motion.div>
-
-      </div>
     </div>
-
-{/* TECHNOLOGIES */}
-<div className="mt-24">
-
-  <h3 className="text-3xl font-bold">
-    Technologies I Use
-  </h3>
-
-  <p className="mt-4 max-w-3xl text-slate-400 leading-8">
-    Throughout Android development, machine learning projects,
-    academic coursework, and software engineering practice,
-    I have worked with a diverse set of technologies and tools.
-  </p>
-
-  <div className="mt-8 grid gap-6 md:grid-cols-2">
-
-    {/* Programming Languages */}
-    <motion.div
-      whileHover={{
-        y: -5,
-        boxShadow: "0 0 25px rgba(34,211,238,0.10)",
-      }}
-      className="
-        rounded-3xl
-        border
-        border-white/10
-        bg-white/5
-        p-5
-        backdrop-blur-xl
-        transition-all
-        duration-300
-        hover:border-cyan-500/30
-      "
-    >
-      <h4 className="mb-5 text-xl font-semibold text-cyan-400">
-        Programming Languages
-      </h4>
-
-      <div className="flex flex-wrap gap-8">
-
-        <div className="flex items-center gap-3">
-          <div className="rounded-lg bg-white/5 p-2">
-            <span className="text-3xl font-bold text-blue-300">C</span>
-          </div>
-          <span>C</span>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="rounded-lg bg-white/5 p-2">
-            <TbBrandCpp className="text-3xl text-blue-500" />
-          </div>
-          <span>C++</span>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="rounded-lg bg-white/5 p-2">
-            <FaJava className="text-3xl text-orange-400" />
-          </div>
-          <span>Java</span>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="rounded-lg bg-white/5 p-2">
-            <FaPython className="text-3xl text-yellow-400" />
-          </div>
-          <span>Python</span>
-        </div>
-
-      </div>
-    </motion.div>
-
-    {/* Mobile Development */}
-    <motion.div
-      whileHover={{
-        y: -5,
-        boxShadow: "0 0 25px rgba(34,197,94,0.10)",
-      }}
-      className="
-        rounded-3xl
-        border
-        border-white/10
-        bg-white/5
-        p-5
-        backdrop-blur-xl
-        transition-all
-        duration-300
-        hover:border-green-500/30
-      "
-    >
-      <h4 className="mb-5 text-xl font-semibold text-green-400">
-        Mobile Development
-      </h4>
-
-      <div className="flex flex-wrap gap-8">
-
-        <div className="flex items-center gap-3">
-          <div className="rounded-lg bg-white/5 p-2">
-            <SiAndroidstudio className="text-3xl text-green-500" />
-          </div>
-          <span>Android Studio</span>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="rounded-lg bg-white/5 p-2">
-            <FaAndroid className="text-3xl text-green-400" />
-          </div>
-          <span>Android</span>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="rounded-lg bg-white/5 p-2">
-            <SiFirebase className="text-3xl text-orange-500" />
-          </div>
-          <span>Firebase</span>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="rounded-lg bg-white/5 p-2">
-            <SiXml className="text-3xl text-sky-400" />
-          </div>
-          <span>XML UI</span>
-        </div>
-
-      </div>
-    </motion.div>
-
-    {/* AI & Machine Learning */}
-    <motion.div
-      whileHover={{
-        y: -5,
-        boxShadow: "0 0 25px rgba(168,85,247,0.10)",
-      }}
-      className="
-        rounded-3xl
-        border
-        border-white/10
-        bg-white/5
-        p-5
-        backdrop-blur-xl
-        transition-all
-        duration-300
-        hover:border-violet-500/30
-      "
-    >
-      <h4 className="mb-5 text-xl font-semibold text-violet-400">
-        AI & Machine Learning
-      </h4>
-
-      <div className="flex flex-wrap gap-8">
-
-        <div className="flex items-center gap-3">
-          <div className="rounded-lg bg-white/5 p-2">
-            <SiTensorflow className="text-3xl text-orange-500" />
-          </div>
-          <span>TensorFlow</span>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="rounded-lg bg-white/5 p-2">
-            <SiPytorch className="text-3xl text-red-500" />
-          </div>
-          <span>PyTorch</span>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="rounded-lg bg-white/5 p-2">
-            <SiOpencv className="text-3xl text-purple-400" />
-          </div>
-          <span>OpenCV</span>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="rounded-lg bg-white/5 p-2">
-            <SiScikitlearn className="text-3xl text-orange-400" />
-          </div>
-          <span>Scikit-Learn</span>
-        </div>
-
-      </div>
-    </motion.div>
-
-    {/* Database & Tools */}
-    <motion.div
-      whileHover={{
-        y: -5,
-        boxShadow: "0 0 25px rgba(249,115,22,0.10)",
-      }}
-      className="
-        rounded-3xl
-        border
-        border-white/10
-        bg-white/5
-        p-5
-        backdrop-blur-xl
-        transition-all
-        duration-300
-        hover:border-orange-500/30
-      "
-    >
-      <h4 className="mb-5 text-xl font-semibold text-orange-400">
-        Database & Tools
-      </h4>
-
-      <div className="flex flex-wrap gap-6">
-
-        <div className="flex items-center gap-3">
-          <div className="rounded-lg bg-white/5 p-2">
-            <SiMysql className="text-3xl text-sky-400" />
-          </div>
-          <span>SQL</span>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="rounded-lg bg-white/5 p-2">
-            <FaGitAlt className="text-3xl text-red-400" />
-          </div>
-          <span>Git</span>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="rounded-lg bg-white/5 p-2">
-            <FaGithub className="text-3xl text-white" />
-          </div>
-          <span>GitHub</span>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="rounded-lg bg-white/5 p-2">
-            <VscCode className="text-3xl text-blue-400" />
-          </div>
-          <span>VS Code</span>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="rounded-lg bg-white/5 p-2">
-            <SiXampp className="text-3xl text-orange-500" />
-          </div>
-          <span>XAMPP</span>
-        </div>
-
-      </div>
-    </motion.div>
-
-  </div>
-
-</div>
 
   </div>
 </section>
@@ -668,7 +463,10 @@ export default function Home() {
 
 <section
   id="projects"
-  className="px-16 py-24 lg:px-32"
+  className="px-6
+    py-20
+    md:px-12
+    lg:px-32"
 >
   <div className="max-w-7xl">
 
@@ -703,15 +501,17 @@ export default function Home() {
           hover:border-cyan-500/40
         "
       >
-        <div className="h-48 overflow-hidden bg-slate-800">
-          <img
-            src="/projects/riceleaf.png"
-            alt="Rice Leaf Disease Detection"
-            className="h-full w-full object-cover"
-          />
-        </div>
+        <div className="bg-gradient-to-br from-slate-200 to-slate-300 p-5">
+  <div className="overflow-hidden rounded-2xl bg-white p-3 shadow-lg">
+    <img
+      src="/riceleaf.png"
+      alt="Rice Leaf Disease Detection"
+      className="w-full object-contain"
+    />
+  </div>
+</div>
 
-        <div className="flex h-[340px] flex-col p-6">
+        <div className="flex flex-col p-6">
 
           <h3 className="mb-4 text-xl font-bold">
             Rice Leaf Disease Detection
@@ -740,23 +540,26 @@ export default function Home() {
 
           <div className="mt-auto flex gap-3">
             <a
-              href="#"
-              className="
-                rounded-xl
-                border
-                border-slate-700
-                px-4
-                py-2
-                text-sm
-                transition
-                hover:border-cyan-400
-              "
-            >
-              Repository
-            </a>
+  href="https://github.com/abdullah6163/Rice_Leaf_Disease_Detection"
+  className="
+    flex items-center gap-2
+    rounded-xl
+    border
+    border-slate-700
+    px-4
+    py-2
+    text-sm
+    transition-all
+    hover:border-cyan-400
+    hover:text-cyan-400
+  "
+>
+  Repository
+  <FaGithub size={16} />
+</a>
 
             <a
-              href="#"
+              href="https://drive.google.com/file/d/1whEtZ5b6Qe6O-R4pmtrYwI12jhyXomyz/view?usp=drive_link"
               className="
                 rounded-xl
                 bg-gradient-to-r
@@ -790,15 +593,17 @@ export default function Home() {
           hover:border-cyan-500/40
         "
       >
-        <div className="h-48 overflow-hidden bg-slate-800">
-          <img
-            src="/projects/cricket.png"
-            alt="CricketScoreCard"
-            className="h-full w-full object-cover"
-          />
-        </div>
+        <div className="bg-gradient-to-br from-slate-200 to-slate-300 p-5">
+  <div className="overflow-hidden rounded-2xl bg-white p-3 shadow-lg">
+    <img
+      src="/cricket.png"
+      alt="CricketScoreCard"
+      className="w-full object-contain"
+    />
+  </div>
+</div>
 
-        <div className="flex h-[340px] flex-col p-6">
+        <div className="flex flex-col p-6">
 
           <h3 className="mb-4 text-xl font-bold">
             CricketScoreCard
@@ -827,23 +632,26 @@ export default function Home() {
 
           <div className="mt-auto flex gap-3">
             <a
-              href="#"
-              className="
-                rounded-xl
-                border
-                border-slate-700
-                px-4
-                py-2
-                text-sm
-                transition
-                hover:border-cyan-400
-              "
-            >
-              Repository
-            </a>
+  href="https://github.com/abdullah6163/CricketScoreCard"
+  className="
+    flex items-center gap-2
+    rounded-xl
+    border
+    border-slate-700
+    px-4
+    py-2
+    text-sm
+    transition-all
+    hover:border-cyan-400
+    hover:text-cyan-400
+  "
+>
+  Repository
+  <FaGithub size={16} />
+</a>
 
             <a
-              href="#"
+              href="https://drive.google.com/file/d/1g0AhZgcsV_To3Bw2htHgf_5Oi8uHbCVQ/view?usp=drive_link"
               className="
                 rounded-xl
                 bg-gradient-to-r
@@ -877,15 +685,17 @@ export default function Home() {
           hover:border-cyan-500/40
         "
       >
-        <div className="h-48 overflow-hidden bg-slate-800">
-          <img
-            src="/projects/pawmart.png"
-            alt="PawMart"
-            className="h-full w-full object-cover"
-          />
-        </div>
+        <div className="bg-gradient-to-br from-slate-200 to-slate-300 p-5">
+  <div className="overflow-hidden rounded-2xl bg-white p-3 shadow-lg">
+    <img
+      src="/riceleaf.png"
+      alt="PawMart"
+      className="w-full object-contain"
+    />
+  </div>
+</div>
 
-        <div className="flex h-[340px] flex-col p-6">
+        <div className="flex flex-col p-6">
 
           <h3 className="mb-4 text-xl font-bold">
             PawMart
@@ -894,7 +704,7 @@ export default function Home() {
           <p className="mb-5 text-slate-400 leading-8">
             Pet e-commerce Android application with Firebase
             authentication, Firestore integration, shopping cart,
-            wishlist, and Google Maps support.
+            wishlist, and Google Maps.
           </p>
 
           <div className="mb-6 flex flex-wrap gap-2">
@@ -914,23 +724,26 @@ export default function Home() {
 
           <div className="mt-auto flex gap-3">
             <a
-              href="#"
-              className="
-                rounded-xl
-                border
-                border-slate-700
-                px-4
-                py-2
-                text-sm
-                transition
-                hover:border-cyan-400
-              "
-            >
-              Repository
-            </a>
+  href="https://github.com/abdullah6163/PawMart"
+  className="
+    flex items-center gap-2
+    rounded-xl
+    border
+    border-slate-700
+    px-4
+    py-2
+    text-sm
+    transition-all
+    hover:border-cyan-400
+    hover:text-cyan-400
+  "
+>
+  Repository
+  <FaGithub size={16} />
+</a>
 
             <a
-              href="#"
+              href="https://drive.google.com/file/d/1UdfzZI3oeHC4hHPIYlCu1DyTzArS1ELE/view?usp=drive_link"
               className="
                 rounded-xl
                 bg-gradient-to-r
@@ -975,10 +788,176 @@ export default function Home() {
   </div>
 </section>
 
+<section
+  id="skills"
+  className="px-6
+    py-20
+    md:px-12
+    lg:px-32"
+>
+  <div className="max-w-7xl mx-auto">
+    
+    {/* Section Header */}
+    <span className="text-cyan-400 uppercase tracking-[0.3em] text-sm">
+      TECH STACK
+    </span>
+
+    <h2 className="mt-4 text-5xl font-bold text-white">
+      Technologies I Use
+    </h2>
+
+    <p className="mt-6 max-w-4xl text-lg text-gray-400 leading-relaxed">
+      Throughout Android development, machine learning projects,
+      academic coursework, and software engineering practice,
+      I have worked with a diverse set of technologies and tools.
+    </p>
+
+    {/* Cards */}
+    <div className="grid gap-8 mt-14 lg:grid-cols-3">
+
+      {/* Mobile Development */}
+      <div className="rounded-3xl border border-green-500/20 bg-white/[0.03] backdrop-blur-sm p-8 hover:border-green-400/40 hover:-translate-y-2 transition-all duration-300">
+
+        <h3 className="flex items-center gap-3 text-2xl font-bold text-green-400 mb-8">
+          📱 Mobile Development
+        </h3>
+
+        <div className="grid grid-cols-2 gap-4">
+
+          <TechItem
+            icon={<FaAndroid className="text-green-500" />}
+            title="Android"
+          />
+
+          <TechItem
+            icon={<FaJava className="text-orange-500" />}
+            title="Java"
+          />
+
+          <TechItem
+            icon={<SiFirebase className="text-yellow-500" />}
+            title="Firebase"
+          />
+
+          <TechItem
+            icon={<SiAndroidstudio className="text-green-400" />}
+            title="Android Studio"
+          />
+
+          <TechItem
+            icon={<SiXml className="text-sky-400" />}
+            title="XML UI"
+          />
+
+          <TechItem
+  icon={<MdDesignServices className="text-purple-400" />}
+  title="Material Design"
+/>
+
+        </div>
+      </div>
+
+      {/* AI & ML */}
+      <div className="rounded-3xl border border-purple-500/20 bg-white/[0.03] backdrop-blur-sm p-8 hover:border-purple-400/40 hover:-translate-y-2 transition-all duration-300">
+
+        <h3 className="flex items-center gap-3 text-2xl font-bold text-purple-400 mb-8">
+          🤖 AI & Machine Learning
+        </h3>
+
+        <div className="grid grid-cols-2 gap-4">
+
+          <TechItem
+            icon={<SiTensorflow className="text-orange-500" />}
+            title="TensorFlow"
+          />
+
+          <TechItem
+            icon={<SiPytorch className="text-red-500" />}
+            title="PyTorch"
+          />
+
+          <TechItem
+            icon={<SiOpencv className="text-purple-500" />}
+            title="OpenCV"
+          />
+
+          <TechItem
+            icon={<SiScikitlearn className="text-orange-400" />}
+            title="Scikit-Learn"
+          />
+
+          <TechItem
+            icon={<SiFastapi className="text-teal-400" />}
+            title="FastAPI"
+          />
+
+          <TechItem
+            icon={<FaPython className="text-yellow-400" />}
+            title="Python"
+          />
+
+        </div>
+      </div>
+
+      {/* Programming & Tools */}
+      <div className="rounded-3xl border border-orange-500/20 bg-white/[0.03] backdrop-blur-sm p-8 hover:border-orange-400/40 hover:-translate-y-2 transition-all duration-300">
+
+        <h3 className="flex items-center gap-3 text-2xl font-bold text-orange-400 mb-8">
+          🛠 Programming & Tools
+        </h3>
+
+        <div className="grid grid-cols-2 gap-4">
+
+  
+
+          <TechItem
+            icon={<SiCplusplus className="text-blue-500" />}
+            title="C++"
+          />
+
+          <TechItem
+            icon={<SiMysql className="text-sky-400" />}
+            title="SQL"
+          />
+
+          <TechItem
+            icon={<FaGitAlt className="text-orange-600" />}
+            title="Git"
+          />
+
+          <TechItem
+            icon={<FaGithub className="text-white" />}
+            title="GitHub"
+          />
+
+          <TechItem
+            icon={<FaCode className="text-sky-400" />}
+            title="VS Code"
+          />
+
+          <TechItem
+            icon={<SiXampp className="text-orange-500" />}
+            title="XAMPP"
+          />
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
 
 <section
   id="education"
-  className="px-16 py-20 lg:px-32"
+  className="px-6
+    py-20
+    md:px-12
+    lg:px-32"
 >
   <div className="max-w-7xl">
 
@@ -1138,9 +1117,190 @@ export default function Home() {
   </div>
 </section>
 
+
+
+
+
+<section id="certifications" className="px-6
+    py-20
+    md:px-12
+    lg:px-32">
+  <div className="max-w-7xl mx-auto">
+
+    {/* Heading */}
+    <div className="mb-16">
+      <p className="text-cyan-400 uppercase tracking-[0.3em] mb-4">
+        Certifications
+      </p>
+
+      <h2 className="text-5xl font-bold mb-6">
+        Achievements & Certifications
+      </h2>
+
+      <p className="text-slate-400 text-xl max-w-3xl leading-9">
+        A collection of competitions, hackathons and certifications
+        that highlight my passion for problem solving, artificial
+        intelligence, machine learning and software development.
+      </p>
+    </div>
+
+    {/* Cards */}
+    <div className="grid lg:grid-cols-3 gap-8">
+
+      {/* ICPC */}
+      <div
+        className="
+          overflow-hidden
+          rounded-3xl
+          border border-slate-800
+          bg-slate-900/40
+          backdrop-blur-sm
+          transition-all
+          duration-300
+          hover:-translate-y-2
+          hover:border-cyan-500/40
+        "
+      >
+        {/* Fixed Image Area */}
+        <div className="h-72 bg-slate-300 p-5 flex items-center justify-center">
+          <img
+            src="/icpc.png"
+            alt="ICPC"
+            className="max-h-full max-w-full object-contain rounded-xl"
+          />
+        </div>
+
+        <div className="p-8 h-[260px] flex flex-col">
+          <h3 className="text-2xl font-bold mb-4">
+            ICPC Preliminary Contest
+          </h3>
+
+          <p className="text-slate-400 leading-8 mb-6">
+            Honorable Mention in the ICPC Online Preliminary Contest
+            representing Daffodil International University.
+          </p>
+
+          <div className="mt-auto">
+            <span className="rounded-lg bg-cyan-500/10 px-4 py-2 text-cyan-400">
+              2024
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* SOLVIO */}
+      <div
+        className="
+          overflow-hidden
+          rounded-3xl
+          border border-slate-800
+          bg-slate-900/40
+          backdrop-blur-sm
+          transition-all
+          duration-300
+          hover:-translate-y-2
+          hover:border-violet-500/40
+        "
+      >
+        <div className="h-72 bg-slate-300 p-5 flex items-center justify-center">
+          <img
+            src="/solvio.png"
+            alt="SOLVIO"
+            className="max-h-full max-w-full object-contain rounded-xl"
+          />
+        </div>
+
+        <div className="p-8 h-[260px] flex flex-col">
+          <h3 className="text-2xl font-bold mb-4">
+            SOLVIO AI Hackathon
+          </h3>
+
+          <p className="text-slate-400 leading-8 mb-6">
+            Successfully qualified for Round 2 in the national
+            SOLVIO AI Hackathon 2025 organized by Sheba Platform.
+          </p>
+
+          <div className="mt-auto">
+            <span className="rounded-lg bg-violet-500/10 px-4 py-2 text-violet-400">
+              2025
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* NDAC */}
+      <div
+        className="
+          overflow-hidden
+          rounded-3xl
+          border border-slate-800
+          bg-slate-900/40
+          backdrop-blur-sm
+          transition-all
+          duration-300
+          hover:-translate-y-2
+          hover:border-emerald-500/40
+        "
+      >
+        <div className="h-72 bg-slate-300 p-5 flex items-center justify-center">
+          <img
+            src="/DataVisionary.jpg"
+            alt="NDAC"
+            className="max-h-full max-w-full object-contain rounded-xl"
+          />
+        </div>
+
+        <div className="p-8 h-[260px] flex flex-col">
+          <h3 className="text-2xl font-bold mb-4">
+            Data Visionary Competition
+          </h3>
+
+          <p className="text-slate-400 leading-8 mb-6">
+            Certificate of Appreciation for participation in the
+            National Data Analytics Competition (NDAC 2025).
+          </p>
+
+          <div className="mt-auto">
+            <span className="rounded-lg bg-emerald-500/10 px-4 py-2 text-emerald-400">
+              2025
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    {/* Button */}
+    <div className="mt-16 flex justify-center">
+      <button
+        className="
+          px-10 py-4
+          rounded-2xl
+          border border-cyan-500/40
+          text-cyan-400
+          hover:bg-cyan-500/10
+          transition
+        "
+      >
+        View All Certifications →
+      </button>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
 <section
   id="contact"
-  className="relative px-20 pt-24 pb-20 lg:px-32"
+  className="px-6
+    py-20
+    md:px-12
+    lg:px-32"
 >
   <div className="max-w-7xl">
 
