@@ -165,6 +165,11 @@ export default function Home() {
 
            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <button
+               onClick={() =>
+    document.getElementById("projects")?.scrollIntoView({
+      behavior: "smooth",
+    })
+  }
                 className="
                   rounded-xl
                   bg-gradient-to-r
@@ -692,7 +697,7 @@ export default function Home() {
         <div className="bg-gradient-to-br from-slate-200 to-slate-300 p-5">
   <div className="overflow-hidden rounded-2xl bg-white p-3 shadow-lg">
     <img
-      src="/riceleaf.png"
+      src="/paw.png"
       alt="PawMart"
       className="w-full object-contain"
     />
@@ -770,7 +775,7 @@ export default function Home() {
 
     <div className="mt-14 text-center">
       <a
-        href="/projects"
+        href="#"
         className="
           inline-flex
           items-center
